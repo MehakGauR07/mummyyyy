@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel='stylesheet' href='mmy.css'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+ body {
+    background-image: url("https://thumbs.dreamstime.com/b/art-spring-flowers-background-frame-52852938.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+  }
+  .login-box {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+  }
+  .user-box {
+    position: relative;
+  }
+  .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border-color: #333;
+  }
+  .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    color: #333;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .user-box input:focus ~ label,
+  .user-box input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #03a9f4;
+  }
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="login-box">
+  <form id="login-form">
+    <div class="user-box">
+      <input type="text" name="username" required>
+      <label>Naam Batao</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required>
+      <label>Secret Password</label>
+    </div>
+    <center>
+      <button class='btn' type="submit">SEND</button>
+    </center>
+    <div class="errorM" id="errorM"></div>
+  </form>
+</div>
+
+<script>
+document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var username = this.elements["username"].value;
+  var password = this.elements["password"].value;
+
+  if (!username || !password) {
+    document.getElementById("errorM").textContent = "Likhna hota hai yaha";
+  } else if (username === "Seema" && password === "MohitPagal") {
+    window.location.href = "card.html"; // Replace with your redirect page
+  } else {
+    alert("Galat salat chize mtt likho");
+  }
+});
+</script>
+
+</body>
+</html>
+
+</html>
+
+
+
